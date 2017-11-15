@@ -70,8 +70,8 @@ void loop()
   data.pitch    = mapJoystickValues( analogRead(A2), 111, 529, 914, true );
   data.roll     = mapJoystickValues( analogRead(A3), 79, 524, 979, false );
 
-  data.dial1    = constrain( map( analogRead(A4), 968,   27, 0, 255 ), 0, 255);
-  data.dial2    = constrain( map( analogRead(A5),   1, 1020, 0, 255 ), 0, 255);
+  data.dial1    = constrain( map( analogRead(A4), 70, 1000, 0, 255 ), 0, 255);
+  data.dial2    = constrain( map( analogRead(A5), 70, 1000, 0, 255 ), 0, 255);
   
   data.switches = 0;
   if ( ! digitalRead(7) ) data.switches |= 0x1;
