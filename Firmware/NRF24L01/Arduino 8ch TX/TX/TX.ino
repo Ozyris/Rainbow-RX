@@ -36,6 +36,8 @@ void resetData()
 
 void setup()
 {
+  pinMode(7, INPUT_PULLUP);
+  pinMode(8, INPUT_PULLUP);
   radio.begin();
   radio.setAutoAck(false);
   radio.setDataRate(RF24_250KBPS);
@@ -66,9 +68,9 @@ void loop()
   // The calibration numbers used here should be measured 
   // for your joysticks using the TestJoysticks sketch.
   data.throttle = mapJoystickValues( analogRead(A0), 69, 515, 1001, false );
-  data.yaw      = mapJoystickValues( analogRead(A1), 10, 428, 885, true );
-  data.pitch    = mapJoystickValues( analogRead(A2), 111, 529, 914, true );
-  data.roll     = mapJoystickValues( analogRead(A3), 79, 524, 979, false );
+  data.yaw      = mapJoystickValues( analogRead(A1), 10, 426, 885, true );
+  data.pitch    = mapJoystickValues( analogRead(A2), 111, 532, 914, true );
+  data.roll     = mapJoystickValues( analogRead(A3), 79, 521, 979, false );
 
   data.dial1    = constrain( map( analogRead(A4), 70, 1000, 0, 255 ), 0, 255);
   data.dial2    = constrain( map( analogRead(A5), 70, 1000, 0, 255 ), 0, 255);
